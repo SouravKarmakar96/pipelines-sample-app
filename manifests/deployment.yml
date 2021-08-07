@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: acloudgurusampleapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: acloudgurusampleapp
+  template:
+    metadata:
+      labels:
+        app: acloudgurusampleapp 
+    spec:
+      containers:
+        - name: acloudgurusampleapp 
+          image: reg1231231.azurecr.io/acloudgurusampleapp
+          ports:
+          - containerPort: 8080
